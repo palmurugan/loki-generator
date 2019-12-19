@@ -1,0 +1,57 @@
+{
+    "name": "UserService",
+    "artifactId": "user-service",
+    "description": "User Service application",
+    "package": "com.loki.user",
+    "entityDetails": [{
+      "entityName": "User",
+      "attributes": [
+        {
+          "name": "userName",
+          "type": "String",
+          "unique": "true",
+          "nullable": "false",
+          "minLength": 6,
+          "maxLength": 30,
+          "regex": {
+            "pattern": "[A-Za-z0-9]+",
+            "errorMessage": "Username should be alphanumeric"
+          }
+        },
+        {
+          "name": "password",
+          "type": "String",
+          "unique": "false",
+          "nullable": "false"
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "unique": "true",
+          "nullable": "false"
+        },
+        {
+          "name": "age",
+          "type": "Integer",
+          "unique": "false",
+          "nullable": "true"
+        }
+      ]
+    }, {
+      "entityName": "Role",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String",
+          "unique": "true",
+          "nullable": "false",
+          "minLength": 4,
+          "maxLength": 15,
+          "regex": {
+            "pattern": "[A-Za-z0-9]+",
+            "errorMessage": "RoleName should be alphanumeric"
+          }
+        }
+      ]
+    }]
+}
