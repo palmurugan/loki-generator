@@ -1,4 +1,4 @@
-package com.loki.user;
+package {{base.package}};
 
 import com.loki.common.config.AuditConfiguration;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 public class {{data.name}}Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run({{data.name}}Application.class, args);
     }
 
 }
