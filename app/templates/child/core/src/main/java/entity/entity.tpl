@@ -1,5 +1,5 @@
 {%- macro sentence_case(text) %}{{ text[0]|upper}}{{text[1:] }}{% endmacro -%}
-package {{base.package}}.entity;
+package {{base.package}}.core.entity;
 
 import com.loki.common.entity.BaseEntity;
 

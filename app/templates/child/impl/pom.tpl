@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
+        <groupId>{{data.package}}</groupId>
+        <artifactId>{{data.artifactId}}</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>{{data.package}}</groupId>
-    <artifactId>{{data.artifactId}}</artifactId>
+    <groupId>{{data.package}}.impl</groupId>
+    <artifactId>{{data.artifactId}}-impl</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>{{data.artifactId}}</name>
-    <description>{{data.description}}</description>
+    <name>{{data.artifactId}}-impl</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <java.version>1.8</java.version>
@@ -29,9 +29,11 @@
         <dependency>
             <groupId>com.loki.common</groupId>
             <artifactId>common-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+			<groupId>com.loki.user.core</groupId>
+			<artifactId>user-service-core</artifactId>
+		</dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
@@ -41,19 +43,16 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${org.mapstruct.version}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>${validation-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate.validator.version}</version>
         </dependency>
 
         <dependency>

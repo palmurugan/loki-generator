@@ -1,4 +1,5 @@
-from app.generator.constants import ENTITY_TEMPLATE, REPOSITORY_TEMPLATE
+from app.generator.constants import ENTITY_TEMPLATE, REPOSITORY_TEMPLATE, SERVICE_TEMPLATE, SERVICE_IMPL_TEMPLATE, \
+    REST_RESOURCE_TEMPLATE
 from app.generator.tools.builder import generate_application, generate_pom, generate_layer, generate_properties
 
 
@@ -13,12 +14,27 @@ def pom_component(data):
 
 
 def entity_component(data):
-    generate_layer(data, ENTITY_TEMPLATE, 'entity', 'Entity')
+    generate_layer(data, 'core', ENTITY_TEMPLATE, 'entity', 'Entity')
     return data
 
 
 def repository_component(data):
-    generate_layer(data, REPOSITORY_TEMPLATE, 'repository', 'EntityRepository')
+    generate_layer(data, 'core', REPOSITORY_TEMPLATE, 'repository', 'EntityRepository')
+    return data
+
+
+def service_component(data):
+    generate_layer(data, 'core', SERVICE_TEMPLATE, 'service', 'Service')
+    return data
+
+
+def service_impl_component(data):
+    generate_layer(data, 'core', SERVICE_IMPL_TEMPLATE, 'service/impl', 'ServiceImpl')
+    return data
+
+
+def resource_component(data):
+    generate_layer(data, 'core', REST_RESOURCE_TEMPLATE, 'web/resource', 'Resource')
     return data
 
 

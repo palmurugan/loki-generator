@@ -4,7 +4,7 @@
     "description": "User Service application",
     "package": "com.loki.user",
     "entityDetails": [{
-      "entityName": "User",
+      "entityName": "BaseUser",
       "attributes": [
         {
           "name": "userName",

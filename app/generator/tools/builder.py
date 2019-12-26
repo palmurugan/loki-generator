@@ -1,21 +1,22 @@
 import os
 from jinja2 import Environment, FileSystemLoader
 
-from app.generator.constants import APPLICATION_TEMPLATE, POM_TEMPLATE, PROPERTY_TEMPLATE, OUTPUT_LOCATION, \
+from app.generator.constants import APPLICATION_TEMPLATE, CORE_POM_TEMPLATE, PROPERTY_TEMPLATE, OUTPUT_LOCATION, \
     PATH_DELIMITER, JAVA_EXTENSION, TEMPLATES
 from app.generator.utils.generatorutils import GeneratorUtil
 
 
-def generate_layer(data, template, prefix, suffix):
-    base_package = GeneratorUtil.get_base_package(data)
+def generate_layer(data, template, prefix_path, suffix, build_type):
+    base_package = GeneratorUtil.get_base_package(data, build_type)
     base_data = GeneratorUtil.get_base_data(data)
     for entity_detail in data['entityDetails']:
-        generate_component(base_data, entity_detail, base_package, template, prefix, suffix)
+        generate_component(base_data, entity_detail, base_package, template, prefix_path, suffix)
 
 
-def generate_component(base_data, entity_data, base_package, template, prefix, suffix):
+def generate_component(base_data, entity_data, base_package, template, prefix_path, suffix):
     coded_template = generate_template(template, entity_data, base_data)
-    file = base_package + PATH_DELIMITER + prefix + PATH_DELIMITER + entity_data['entityName'] + suffix + JAVA_EXTENSION
+    file = base_package + PATH_DELIMITER + prefix_path + PATH_DELIMITER + entity_data[
+        'entityName'] + suffix + JAVA_EXTENSION
     create_file(file, coded_template)
 
 
@@ -46,7 +47,7 @@ def generate_application(data):
 
 
 def generate_pom(data):
-    coded_template = generate_template(POM_TEMPLATE, data, GeneratorUtil.get_base_data(data))
+    coded_template = generate_template(CORE_POM_TEMPLATE, data, GeneratorUtil.get_base_data(data))
     create_file(data['artifactId'] + '/pom.xml', coded_template)
 
 
