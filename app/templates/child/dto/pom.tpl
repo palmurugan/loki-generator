@@ -10,7 +10,7 @@
     </parent>
     <groupId>{{data.package}}.dto</groupId>
     <artifactId>{{data.artifactId}}-dto</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>{{data.artifactId}}-dto</name>
     <url>http://maven.apache.org</url>
 
@@ -23,6 +23,10 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>${validation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.loki.common</groupId>
+            <artifactId>common-service</artifactId>
         </dependency>
     </dependencies>
 </project>

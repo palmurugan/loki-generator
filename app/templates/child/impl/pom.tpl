@@ -31,9 +31,13 @@
             <artifactId>common-service</artifactId>
         </dependency>
         <dependency>
-			<groupId>com.loki.user.core</groupId>
-			<artifactId>user-service-core</artifactId>
+           <groupId>{{data.package}}.core</groupId>
+           <artifactId>{{data.artifactId}}-core</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>{{data.package}}.dto</groupId>
+            <artifactId>{{data.artifactId}}-dto</artifactId>
+        </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
@@ -58,6 +62,24 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <!-- Swagger Dependencies -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
         </dependency>
     </dependencies>
 

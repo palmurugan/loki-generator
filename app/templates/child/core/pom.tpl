@@ -32,6 +32,11 @@
         </dependency>
 
         <dependency>
+            <groupId>{{data.package}}.dto</groupId>
+            <artifactId>{{data.artifactId}}-dto</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
